@@ -34,7 +34,7 @@ jobs:
         uses: SaladTechnologies/sce-deploy@v0.1.1
         with:
           salad_organization: "stari"
-          salad_project: "kryptex"  # ВАЖНО: строго в нижнем регистре!
+          salad_project: "default"
           salad_container_group: "high4090"
           salad_api_key: ${{ secrets.SALAD_API_KEY }}
           image_name: "ghcr.io/${{ github.repository_owner }}/krig-prl-miner:latest"
