@@ -34,6 +34,6 @@ jobs:
         with:
           salad_organization: "stari"          # Ваша организация (из URL панели Salad)
           salad_project: "Kryptex"             # Ваш проект (обычно default)
-          salad_container_group: "rtx4090"    # Имя вашей группы контейнеров
+          salad_container_group: "high4090"    # Имя вашей группы контейнеров
           salad_api_key: ${{ secrets.SALAD_API_KEY }} # Ключ из секретов GitHub
           image_name: "ghcr.io/${{ github.repository_owner }}/krig-prl-miner:latest"
