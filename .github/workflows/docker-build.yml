@@ -29,11 +29,11 @@ jobs:
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/krig-prl-miner:latest
 
-      - name: Deploy Update to SaladCloud
-        uses: SaladTechnologies/sce-deploy@v0.1.1
-        with:
-          salad_organization: "stari"          # Ваша организация (из URL панели Salad)
-          salad_project: "Kryptex"             # Ваш проект (обычно default)
-          salad_container_group: "high4090"    # Имя вашей группы контейнеров
-          salad_api_key: ${{ secrets.SALAD_API_KEY }} # Ключ из секретов GitHub
-          image_name: "ghcr.io/${{ github.repository_owner }}/krig-prl-miner:latest"
+      - name: Debug SaladCloud API
+        run: |
+          curl -X PATCH \
+            "https://api.salad.com/api/public/organizations/stari/projects/Kryptex/containers/high4090" \
+            -H "Salad-Api-Key: ${{ secrets.SALAD_API_KEY }}" \
+            -H "Content-Type: application/merge-patch+json" \
+            -d '{"container": {"image": "ghcr.io/dontdonkmedonks/krig-prl-miner:latest"}}' \
+            -v
