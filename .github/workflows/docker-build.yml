@@ -35,6 +35,6 @@ jobs:
         with:
           salad_organization: "stari"
           salad_project: "default"
-          salad_container_group: "high4090"
+          salad_container_group: "ti4070"
           salad_api_key: ${{ secrets.SALAD_API_KEY }}
           image_name: "ghcr.io/${{ github.repository_owner }}/krig-prl-miner:latest"
